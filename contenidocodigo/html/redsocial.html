@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Información de la red social</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+</head>
+
+<body>
+    <fieldset>
+        <legend>Información de la red social</legend>
+        <div class="form-group row">
+            {% if redSocial %}
+            <p><strong>Nombre:</strong> {{ redSocial.nombre }}</p>
+            <p><strong>url:</strong> {{ redSocial.url }}</p>
+            {% if (redSocial.Nombre == "facebook") %}
+            <p><strong>grupos:</strong> {{ redSocial.grupos }}</p>
+            {% elif (redSocial.Nombre== "Twitter") %}
+            <p><strong>hashtags:</strong> {{ redSocial.hashtags }}</p>
+            {% elif (redSocial.Nombre == "Instagram") %}
+            <p><strong>filtros:</strong> {{ redSocial.filtros }}</p>
+            {% endif %}
+            <!--<p><strong>Descripcion:</strong> {{ redSocial.descripcion() }}</p>-->
+            {% else %}
+            <p>La redSocial seleccionada no fue encontrada en la lista.</p>
+            {% endif %}
+            <form method="get" action="/">
+                <button type="submit" class="btn btn-primary">Mas redSocials</button>
+            </form>
+        </div>
+    </fieldset>
+</body>
+</html>

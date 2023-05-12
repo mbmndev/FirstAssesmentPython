@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Información de redSocials</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+</head>
+
+<body>
+  <form method="post" action="/redsocial">
+    <legend>Información de redSocials</legend>
+    <fieldset  class="d-grid" >
+      <label for="redSocial">Selecciona una red social:</label>
+      <select id="redSocial" name="redSocial" class="col-form-label col-form-label-sm">
+        <option value="facebook">Facebook</option>
+        <option value="Twitter">Twitter</option>
+        <option value="Instagram">Instagram</option>
+      </select>
+      <label for="url" class="col-form-label col-form-label-sm">Url:</label>
+      <input type="text" id="url" name="url" >
+      <div id="atributos">
+        <label for="grupos" class="col-form-label col-form-label-sm">Grupos:</label>
+        <input type="text" id="grupos" name="grupos" >
+      </div>
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Revisar</button>
+  </form>
+
+  <script>
+    const redSocialSelect = document.getElementById("redSocial");
+    const atributosDiv = document.getElementById("atributos");
+
+    function mostrarAtributos() {
+      const redSocial = redSocialSelect.value;
+      atributosDiv.innerHTML = "";
+
+      if (redSocial === "facebook") {
+        atributosDiv.innerHTML += `
+        <label for="grupos" class="col-form-label col-form-label-sm">Grupos:</label>
+        <input type="text" id="grupos" name="grupos" >
+          `;
+      } else if (redSocial === "Twitter") {
+        atributosDiv.innerHTML += `
+            <label for="hashtags" class="col-form-label col-form-label-sm">Hash Tags:</label>
+            <input type="text" id="hashtags" name="hashtags">
+          `;
+      } else if (redSocial === "Instagram") {
+        atributosDiv.innerHTML += `
+            <label for="filtros" class="col-form-label col-form-label-sm">filtros:</label>
+            <input type="text" id="filtros" name="filtros">
+          `;
+      }
+    }
+    redSocialSelect.addEventListener("change", mostrarAtributos);
+  </script>
+</body>
+
+</html>
