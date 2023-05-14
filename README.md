@@ -23,7 +23,7 @@
   - Instrucciones de ejecución
 
     - ```python app.py``` - Win
-    - ```python3 app.py`` - MacOs
+    - ```python3 app.py``` - MacOs
     - Acceder al enlace que nos muestra por consola
   - Fallo a la hora de pasar datos al redsocial.html
 

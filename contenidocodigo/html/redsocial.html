@@ -22,12 +22,12 @@
             {% elif (redSocial.Nombre == "Instagram") %}
             <p><strong>filtros:</strong> {{ redSocial.filtros }}</p>
             {% endif %}
-            <!--<p><strong>Descripcion:</strong> {{ redSocial.descripcion() }}</p>-->
+            <p><strong>Descripcion:</strong> {{ redSocial.descripcion() }}</p>
             {% else %}
-            <p>La redSocial seleccionada no fue encontrada en la lista.</p>
+            <p>La Red Social seleccionada no fue encontrada en la lista.</p>
             {% endif %}
             <form method="get" action="/">
-                <button type="submit" class="btn btn-primary">Mas redSocials</button>
+                <button type="submit" class="btn btn-primary">Mas Redes Sociales</button>
             </form>
         </div>
     </fieldset>

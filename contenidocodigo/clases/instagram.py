@@ -1,4 +1,4 @@
-from RRSS import RedesSociales
+from contenidocodigo.clases.RRSS import RedesSociales
 
 class Instagram(RedesSociales):
     def __init__(self, nombre, url, usuarios, filtros):
